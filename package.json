@@ -1,0 +1,33 @@
+{
+  "name": "carrinhodecompras",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.ts",
+  "scripts": {
+    "start:dev": "tsnd --respawn --transpile-only --ignore-watch node_modules --exit-child src/index.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RaulRory/carrionhoDeCompras.git"
+  },
+  "keywords": [],
+  "author": "Raul Rory",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RaulRory/carrionhoDeCompras/issues"
+  },
+  "homepage": "https://github.com/RaulRory/carrionhoDeCompras#readme",
+  "devDependencies": {
+    "@types/node": "^16.11.30",
+    "@typescript-eslint/eslint-plugin": "^5.21.0",
+    "@typescript-eslint/parser": "^5.21.0",
+    "eslint": "^8.14.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "prettier": "^2.6.2",
+    "ts-node": "^10.7.0",
+    "ts-node-dev": "^1.1.8",
+    "typescript": "^4.6.3"
+  }
+}
