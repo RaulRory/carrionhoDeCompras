@@ -1,3 +1,4 @@
+import { Cariinho } from './carrinho/Carrinho';
 import { GerarProduto } from './produto/GerarProduto';
 import { ItemCompra } from './compra/ItemCompra';
 
@@ -17,8 +18,10 @@ async function main() {
   if (produtoCarrinho) {
     const qunatidade = prompt('Digite a quantidade para quer comprar desse produto: ');
     const itemCompra = new ItemCompra(produtoCarrinho.descricao, Number(qunatidade), produtoCarrinho.preco);
+    const carrinho = new Cariinho([itemCompra], 10);
 
-    itemCompra.mostraItem();
+    carrinho.mostraCarrinho();
+    console.log(`O valor da compra é ${carrinho.getTotalCompra()} com os descontos de o valor vai ${carrinho.getValorPagar()}`);
   }
 
   console.log('Bye Bye');

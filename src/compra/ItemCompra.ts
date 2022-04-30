@@ -13,8 +13,8 @@ export class ItemCompra {
     return this._qtd * this._preco;
   }
 
-  public mostraItem(): void {
-    console.log(`Descrição: ${this._descricao},  Qunatidade: ${this._qtd}, Preço: ${this.calcSubtotal()}`);
+  public mostraItem(): string {
+    return `Descrição: ${this._descricao},  Qunatidade: ${this._qtd}, Preço: ${this.calcSubtotal()}`;
   }
   public get descricao(): string {
     return this._descricao;
