@@ -15,9 +15,6 @@
     "module": "commonjs",                                /* Specify what module code is generated. */
     "moduleResolution": "node",                       /* Specify how TypeScript looks up a file from a given module specifier. */
     "baseUrl": "./src",                                 /* Specify the base directory to resolve non-relative module names. */
-    "typeRoots": ["./node_modules/@types"],                                  /* Specify multiple folders that act like `./node_modules/@types`. */
-    "types": ["node"],                                      /* Specify type package names to be included without being referenced in a source file. */
-
 
     /* Emit */
     "declaration": true,                              /* Generate .d.ts files from TypeScript and JavaScript files in your project. */
@@ -36,6 +33,6 @@
     "strict": true,                                      /* Enable all strict type-checking options. */
     "skipLibCheck": true                                 /* Skip type checking all .d.ts files. */
   },
-  "include": ["./src/*"],
+  "include": ["**/*"],
   "exclude": ["node_modules", "**/*.spec.ts"]
 }
