@@ -18,10 +18,7 @@ describe('Create ItemCompra', () => {
 
   it('Must show a string with all products', () => {
     const items = new ItemCompra('Meu produto de test', 2, 25.5);
-    jest.spyOn(console, 'log').mockImplementation();
-    items.mostraItem();
 
-    expect(console.log).toBeCalledTimes(1);
-    expect(console.log).toHaveBeenLastCalledWith(`Descrição: Meu produto de test,  Qunatidade: 2, Preço: 51`);
+    expect(items.mostraItem()).toBe(`Descrição: Meu produto de test, Preço: 25.5, Qunatidade: 2, Subtotal: 51`);
   });
 });

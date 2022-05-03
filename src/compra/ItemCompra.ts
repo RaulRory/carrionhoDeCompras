@@ -14,7 +14,7 @@ export class ItemCompra {
   }
 
   public mostraItem(): string {
-    return `Descrição: ${this._descricao},  Qunatidade: ${this._qtd}, Preço: ${this.calcSubtotal()}`;
+    return `Descrição: ${this._descricao}, Preço: ${this._preco}, Qunatidade: ${this._qtd}, Subtotal: ${this.calcSubtotal()}`;
   }
   public get descricao(): string {
     return this._descricao;
