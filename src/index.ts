@@ -6,24 +6,31 @@ import promptSync from 'prompt-sync';
 
 async function main() {
   const dadosProduto = new GerarProduto();
-
   const produto = await dadosProduto.criarProduto();
   const prompt = promptSync();
-  const codigo = prompt('Digite um codigo valido: ');
+  const listaItens = [];
+  let opcao = 1;
+  let respostaOpcao;
 
-  const produtoCarrinho = produto.find((idProduto) => {
-    if (idProduto.codigo === Number(codigo)) return idProduto;
-  });
+  while (opcao === 1) {
+    const codigo = prompt('Digite um codigo valido: ');
+    const produtoCarrinho = produto.find((idProduto) => {
+      if (idProduto.codigo === Number(codigo)) return idProduto;
+    });
 
-  if (produtoCarrinho) {
-    const qunatidade = prompt('Digite a quantidade para quer comprar desse produto: ');
-    const itemCompra = new ItemCompra(produtoCarrinho.descricao, Number(qunatidade), produtoCarrinho.preco);
-    const carrinho = new Cariinho([itemCompra], 10);
+    if (produtoCarrinho) {
+      const qunatidade = prompt('Digite a quantidade para quer comprar desse produto: ');
+      const itemCompra = new ItemCompra(produtoCarrinho.descricao, Number(qunatidade), produtoCarrinho.preco);
+      listaItens.push(itemCompra);
+    }
 
-    carrinho.mostraCarrinho();
-    console.log(`O valor da compra é ${carrinho.getTotalCompra()} com os descontos de o valor vai ${carrinho.getValorPagar()}`);
+    respostaOpcao = prompt('Deseja adicionar outro Produto: 1 - SIM, 9999 - NÂO: ');
+
+    opcao = Number(respostaOpcao);
   }
 
+  const carrinho = new Cariinho(listaItens, 10);
+  carrinho.mostraCarrinho();
   console.log('Bye Bye');
 }
 

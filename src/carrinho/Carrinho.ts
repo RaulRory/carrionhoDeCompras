@@ -20,8 +20,10 @@ export class Cariinho {
 
   public mostraCarrinho() {
     for (let index = 0; index < this._listaItens.length; index++) {
-      console.log(`${index + 1}, ${this._listaItens[index].mostraItem()}`);
+      console.log(`${index + 1} - ${this._listaItens[index].mostraItem()}`);
     }
+    console.log(`Descontos: ${(this._totalCompra * (this._porcDesconto / 100)).toFixed(2)}`);
+    console.log(`TOTAL: ${this._valorPagar}`);
   }
 
   public somaValores(): number {
